@@ -3,6 +3,7 @@ const { app, BrowserWindow, Notification } = require('electron');
 function createWindow() {
     const win = new BrowserWindow({
         title: "Lainan for Desktop",
+        icon: "icon/icon.png",
         width: 460,
         minWidth: 360,
         height: 800,

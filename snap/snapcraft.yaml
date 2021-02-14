@@ -1,0 +1,61 @@
+name: lainan-for-discord
+title: "Lainan for Discord"
+base: core18
+version: "0.0.1"
+license: "MIT"
+summary: Lainan for Discord
+description: |
+  _Lainan for Discord_
+
+  LainanAPIを使ったDiscordBotをGUIで簡単に使える！
+icon: "icon/lainan_icon.svg"
+grade: stable
+confinement: strict
+
+apps:
+  lainan-for-discord:
+    command: lainan-for-discord/lainan-for-discord --no-sandbox
+    extensions: [gnome-3-34]
+    plugs:
+    - desktop
+    - desktop-legacy
+    - wayland
+    - unity7
+    - alsa
+    - avahi-observe
+    - browser-support
+    - camera
+    - cups-control
+    - gsettings
+    - home
+    - network
+    - opengl
+    - audio-playback
+    - screen-inhibit-control
+    - upower-observe
+    environment:
+      TMPDIR: $XDG_RUNTIME_DIR
+
+parts:
+  lainan-for-discord:
+    plugin: nil
+    source: app/
+    override-build: |
+        export ELECTRON_GET_USE_PROXY=1
+        export GLOBAL_AGENT_HTTP_PROXY="${http_proxy}"
+        export GLOBAL_AGENT_HTTPS_PROXY="${http_proxy}"
+        npm install electron electron-packager
+        npx electron-packager . --overwrite --platform=linux --output=release-build --prune=true
+        cp -rv ./lainan-for-discord-linux-* $SNAPCRAFT_PART_INSTALL/lainan-for-discord
+        # npm i electron electron-builder
+        # npm run pack
+        # mkdir $SNAPCRAFT_PART_INSTALL/lainan-for-discord
+        # cd release-builds/*/
+        # mv * $SNAPCRAFT_PART_INSTALL/lainan-for-discord
+    build-snaps:
+    - node/14/stable
+    build-packages:
+    - unzip
+    stage-packages:
+    - libnss3
+    - libnspr4
