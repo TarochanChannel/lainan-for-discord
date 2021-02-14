@@ -6,6 +6,14 @@
   "scripts": {
     "test": "electron ."
   },
+  "build": {
+    "productName": "Lainan for Discord",
+    "icon": "icon/icon.png",
+    "copyright": "(c) 2021 MonHu",
+    "win": {
+      "target": "nsis"
+    }
+  },
   "author": "MonHu",
   "license": "MIT",
   "devDependencies": {

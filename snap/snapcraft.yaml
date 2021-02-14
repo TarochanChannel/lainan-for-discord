@@ -8,7 +8,7 @@ description: |
   _Lainan for Discord_
 
   LainanAPIを使ったDiscordBotをGUIで簡単に使える！
-icon: "icon/lainan_icon.svg"
+icon: "icon/icon.svg"
 grade: stable
 confinement: strict
 
