@@ -1,0 +1,19 @@
+{
+  "name": "lainan-for-discord",
+  "version": "0.0.1",
+  "description": "LainanAPIを使ったDiscordBotをGUIで簡単に使える！",
+  "main": "index.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "MonHu",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^11.2.3",
+    "electron-packager": "^15.2.0"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "request": "^2.88.2"
+  }
+}

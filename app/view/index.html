@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="discord.js"></script>
+</head>
+
+<body class="flow-text">
+    <div style="display: none;">
+        <div class="welcome_screens">
+            <div class="fuwatto">
+                <h1>ようこそ</h1>
+                <h2>1 - ご挨拶</h2>
+                Lainan for Discordをご利用いただきありがとうございます。
+                <br>
+                <br>
+                LainanAPI及びLainanAPIを使ったDiscordBotの作成する前に、いくつかステップがございます。
+                <br>
+                そのステップをすべて完了した後すぐに、LainanAPIを使ったBotを作成できます。
+            </div>
+        </div>
+        <div class="welcome_screens">
+            <h1>ようこそ</h1>
+            <h2>2 - 利用規約</h2>
+            LainanAPIをご利用になるには、利用規約をお読みいただき、理解した後に同意していただく必要がございます。
+            <br>
+            <a onclick='urlopen("https://lainan.one/tos.html")' class="btn col s12">利用規約を開く</a>
+        </div>
+        <div class="welcome_screens">
+            <h1>ようこそ</h1>
+            <h2>3 - Botのセットアップ</h2>
+            DiscordBotをまず作成してください。
+            <br>
+            セットアップ方法がわからない場合は、<a onclick='urlopen("https://qiita.com/MonHu/items/7db78c6ffda490065968")'
+                class="btn">こちら</a>をクリックしてください。
+        </div>
+        <div class="welcome_screens">
+            <h1>ようこそ</h1>
+            <h2>4 - 終わりに</h2>
+            おめでとうございます!
+            <br>
+            セットアップは完了しました！
+            <br>
+            <br>
+            残りはダッシュボードで行ってください。
+        </div>
+    </div>
+    <div class="welcome" id="welcome">
+        <div class="container row" id="setup_content">
+        </div>
+        <div class="card-panel" id="setup_bar">
+            <a onclick="welcome_screen.back()" class="btn next_btn">前へ</a>
+            <a onclick="welcome_screen.next()" class="btn next_btn">次へ</a>
+        </div>
+    </div>
+
+    <div class="container content">
+        <h1>Lainan for Discord</h1>
+        DiscordBot Token:
+        <input type="password" id="token" class="browser-default">
+        Prefix:
+        <input type="text" id="prefix" class="browser-default">
+        Status Message:
+        <input type="text" id="stamsg" class="browser-default">
+        Status:
+        <select id="status" class="browser-default btn">
+            <option value="online" selected>Online</option>
+            <option value="idle">Idle</option>
+            <option value="dnd">Do Not Disturb</option>
+            <option value="offline">Invisible</option>
+        </select>
+        ReactionSetting:
+        <select id="reac" class="browser-default btn">
+            <option value="bal" selected>Balance</option>
+            <option value="all">All</option>
+            <option value="lao">Lainan Only</option>
+            <option value="wmo">WikiMedia Only</option>
+        </select>
+        Reaction for:
+        <select id="refo" class="browser-default btn">
+            <option value="usr" selected>User</option>
+            <option value="uab">User&Bot</option>
+        </select>
+        <div class="row" style="margin: 16px 0 16px 0;">
+            <a class="btn col s6" onclick="client.destroy()">Stop</a>
+            <a class="btn col s6" onclick="client.login(document.getElementById('token').value)">Run</a>
+        </div>
+    </div>
+</body>
+
+</html>

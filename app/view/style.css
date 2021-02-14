@@ -1,0 +1,117 @@
+/* フォントをインポート */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+* {
+    /* フォントをすべての箇所に適応 */
+    font-family: 'Noto Sans JP', sans-serif;
+    /* 背景色設定 */
+    background: #e3f2fd;
+    /* 文字色設定 */
+    color: #263238;
+    text-shadow: 4px 4px 8px #c1ced7,
+    -4px -4px 8px #ffffff;
+}
+
+
+.card-panel {
+    /* ニューモフィズムを導入 */
+    border-radius: 32px;
+    background: #e3f2fd;
+    box-shadow: 8px 8px 16px #c1ced7,
+        -8px -8px 16px #ffffff;
+    padding: 0px;
+}
+
+/* ウェルカムスクリーン */
+.welcome {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* ふわっと出てくるアニメーション */
+.fuwatto {
+    animation-name: fuwatto;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+/* ふわっと出てくるアニメーション本体 */
+@keyframes fuwatto {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* セットアップバー */
+#setup_bar {
+    margin: 2vw;
+    position: absolute;
+    bottom: 0px;
+    height: 8vh;
+    min-height: 64px;
+    width: 96vw;
+    text-align: right;
+}
+
+/* ボタン */
+.btn,
+.btn:hover,
+.btn:focus {
+    color: #263238;
+    border-radius: 32px;
+    background: #e3f2fd;
+    box-shadow: 8px 8px 16px #c1ced7,
+        -8px -8px 16px #ffffff;
+}
+
+.btn:active {
+    background: #e3f2fd;
+    box-shadow: inset 4px 4px 8px #c1ced7,
+        inset -4px -4px 8px #ffffff;
+}
+
+.next_btn {
+    margin: 12px;
+    height: calc(100% - 24px);
+}
+
+/* 入力欄 */
+input:not([type]),
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search] {
+    border-radius: 32px;
+    background: #e3f2fd;
+    box-shadow: inset 4px 4px 8px #c1ced7,
+        inset -4px -4px 8px #ffffff;
+    border: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 16px;
+    padding: 8px;
+}
+
+/* セレクト(ボタン) */
+select {
+    height: 3rem;
+    width: 100%;
+    font-size: 16px;
+    padding: 8px;
+}
