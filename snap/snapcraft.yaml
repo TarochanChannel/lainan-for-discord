@@ -1,7 +1,7 @@
 name: lainan-for-discord
 title: "Lainan for Discord"
 base: core18
-version: "0.0.11"
+version: "0.0.2"
 license: "MIT"
 summary: Lainan for Discord
 description: |
@@ -47,11 +47,6 @@ parts:
         npm install electron electron-packager
         npx electron-packager . --overwrite --platform=linux --output=release-build --prune=true
         cp -rv ./lainan-for-discord-linux-* $SNAPCRAFT_PART_INSTALL/lainan-for-discord
-        # npm i electron electron-builder
-        # npm run pack
-        # mkdir $SNAPCRAFT_PART_INSTALL/lainan-for-discord
-        # cd release-builds/*/
-        # mv * $SNAPCRAFT_PART_INSTALL/lainan-for-discord
     build-snaps:
     - node/14/stable
     build-packages:

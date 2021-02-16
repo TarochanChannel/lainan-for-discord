@@ -17,10 +17,18 @@ var welcome_screen = {
 };
 //読み込まれたとき
 window.onload = function () {
-    document.getElementById("setup_content").innerHTML = document.getElementsByClassName("welcome_screens")[0].innerHTML;//0ページ目を表示
-    M.FormSelect.init(document.querySelectorAll('select'), {});
-
-    
+    if (localStorage.getItem("config")) {
+        const config =JSON.parse(localStorage.getItem("config"));
+        document.getElementById("token").value = config.token;
+        document.getElementById("status").value = config.status;
+        document.getElementById("prefix").value = config.prefix;
+        document.getElementById("stamsg").value = config.stamsg;
+        document.getElementById("reac").value = config.reac;
+        document.getElementById("refo").value = config.refo;
+        document.getElementById("setup_content").style.display = "none";
+    }else {
+        document.getElementById("setup_content").innerHTML = document.getElementsByClassName("welcome_screens")[0].innerHTML;//0ページ目を表示
+    };
 };
 //URL開くやつ
 function urlopen(url) {

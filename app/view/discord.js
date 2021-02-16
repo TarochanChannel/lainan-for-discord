@@ -12,6 +12,14 @@ client.on('ready', () => {
             status: document.getElementById("status")
         });
     }, 1000);
+    localStorage.setItem("config", JSON.stringify({
+        "token": client.token,
+        "status": document.getElementById("status").value,
+        "prefix": document.getElementById("prefix").value,
+        "stamsg": document.getElementById("stamsg").value,
+        "reac": document.getElementById("reac").value,
+        "refo": document.getElementById("refo").value
+    }));
 });
 
 client.on('message', async message => {
