@@ -25,7 +25,7 @@ window.onload = function () {
         document.getElementById("stamsg").value = config.stamsg;
         document.getElementById("reac").value = config.reac;
         document.getElementById("refo").value = config.refo;
-        document.getElementById("setup_content").style.display = "none";
+        document.getElementById("welcome").style.display = "none";
     }else {
         document.getElementById("setup_content").innerHTML = document.getElementsByClassName("welcome_screens")[0].innerHTML;//0ページ目を表示
     };
