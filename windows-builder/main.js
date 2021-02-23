@@ -5,10 +5,10 @@ const { execSync } = require('child_process');
 
 var git = "https://raw.githubusercontent.com/TarochanChannel/lainan-for-discord/main/";
 var files;
-request(git + "app-files.json", function (error, response, body) {
+request(git + "app-files.json", async function (error, response, body) {
     if (error || !body) return;
     files = JSON.parse(body);
-    Object.keys(files.windows).forEach(function (folder) {
+    await Object.keys(files.windows).forEach(function (folder) {
         files.windows[folder].forEach(function (file) {
             request(`${git}${folder}/${file}`, function (error, response, body) {
                 if (error || !body) return;

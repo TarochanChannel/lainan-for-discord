@@ -8,7 +8,6 @@
   },
   "build": {
     "appId": "lainan.for.discord",
-    "projectDir": "app",
     "productName": "Lainan for Discord",
     "icon": "icon/icon.png",
     "copyright": "(c) 2021 MonHu",
