@@ -6,7 +6,7 @@
         ],
         "app/icon": [
             "icon.png",
-            "icon@16.png"
+            "icon.ico"
         ],
         "app/view": [
             "discord.js",
