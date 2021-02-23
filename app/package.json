@@ -13,12 +13,10 @@
     "icon": "icon/icon.png",
     "copyright": "(c) 2021 MonHu",
     "win": {
+      "icon": "icon/icon.ico",
       "target": {
         "target": "nsis",
-        "arch": [
-          "x64",
-          "ia32"
-        ]
+        "arch": ["x64"]
       }
     }
   },
