@@ -1,0 +1,9 @@
+{
+    "windows": {
+        "app": {
+            "/": ["index.js","package.json"],
+            "icon": ["icon.png","icon@16.png"],
+            "view": ["discord.js","index.html","script.js","style.css"]
+        }
+    }
+}
