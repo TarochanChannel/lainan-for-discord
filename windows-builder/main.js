@@ -18,6 +18,6 @@ request(git + "app-files.json", async function (error, response, body) {
         });
     });
 
-    execSync("cd app&&npm install");
+    execSync("npm install",{cwd: 'app'});
     execSync("npx electron-builder -w --projectDir app");
 });

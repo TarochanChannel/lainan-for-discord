@@ -1,0 +1,15 @@
+// Lainan for Discord Downloader
+// (c) 2021 MonHu
+
+//画面のセットアップ
+x = 1280:y = 720
+screen 0,1280,720,0,ginfo_dispx/2-(x/2),ginfo_dispy/2-(y/2),x,y
+title "Lainan for Discord Downloader"
+//背景
+gradf 0,0,x,y,1,0x00a0ff,0x00f0ff
+//画面に適当にタイトルつける
+color 0xf0,0xf0,0xf0
+font "",48
+mes "Lainan for Discord Downloader"
+
+//ここからダウンローダー本体
