@@ -7,11 +7,19 @@
     "test": "electron ."
   },
   "build": {
+    "appId": "lainan.for.discord",
+    "projectDir": "app",
     "productName": "Lainan for Discord",
     "icon": "icon/icon.png",
     "copyright": "(c) 2021 MonHu",
     "win": {
-      "target": "nsis"
+      "target": {
+        "target": "nsis",
+        "arch": [
+          "x64",
+          "ia32"
+        ]
+      }
     }
   },
   "author": "MonHu",
