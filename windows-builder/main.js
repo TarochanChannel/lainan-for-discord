@@ -49,11 +49,11 @@ request(git + "app-files.json", async function (error, response, body) {
         files.windows[folder].forEach(function (file) {
             dl_promise.push(new Promise((resolve, reject) => {
                 console.log(`${BgCyan}Lainan for Discordのソースコードの${folder}/${file}をダウンロードします。${Reset}`);
-                request(`${git}${folder}/${file}`, function (error, response, body) {
+                request({url:`${git}${folder}/${file}`,encoding: null}, function (error, response, body) {
                     if (error || !body)
                         return;
                     mkdirp.sync(`${folder}`);
-                    fs.writeFileSync(`${folder}/${file}`, body);
+                    fs.writeFileSync(`${folder}/${file}`, body, 'binary');
                     console.log(`${BgGreen}Lainan for Discordのソースコードの${folder}/${file}のダウンロードが完了しました。${Reset}`);
                     resolve();
                 });
