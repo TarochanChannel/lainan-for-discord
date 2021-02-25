@@ -1,7 +1,9 @@
+'use strict';
+
 const request = require('request');
 const fs = require("fs");
 const mkdirp = require('mkdirp');
-const { execSync } = require('child_process');
+const { execSync,exec,execFileSync } = require('child_process');
 
 const Reset = '\x1b[0m';
 const Bright = '\x1b[1m';
@@ -72,8 +74,13 @@ request(git + "app-files.json", async function (error, response, body) {
             if (Isknownode) {
                 console.log(BgCyan + "Lainan for Discordをダウンロードしたソースコードからビルドしています。" + Reset);
                 execSync("npm install", { cwd: 'app' });
-                execSync("npx electron-builder -w --projectDir app");
-                console.log(BgGreen + "ビルドが完了しました。" + Reset);
+                exec("npx electron-builder -w --projectDir app",{},function(error, stdout, stderr) {
+                    if (error) {
+                    console.log(BgRed + "ビルドに失敗しました。" + Reset);
+                    return;
+                    }
+                    console.log(BgGreen + "ビルドが完了しました。" + Reset);
+                });
             }
         }
     });
