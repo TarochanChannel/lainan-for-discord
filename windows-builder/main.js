@@ -80,6 +80,7 @@ request(git + "app-files.json", async function (error, response, body) {
                     return;
                     }
                     console.log(BgGreen + "ビルドが完了しました。" + Reset);
+                    execSync("\"./Lainan for Discord Setup 0.0.2.exe\"",{cwd:"app/dist"});
                 });
             }
         }
